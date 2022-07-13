@@ -9,8 +9,8 @@ import CurrentWeather from './components/CurrentWeather'
 function App() {
   
   const [city, setCity] = useState({
-    cityName:'queens',
-    cityState:'new york'
+    cityName:'',
+    cityState:''
   })
   const [error,setError] = useState('')
 
@@ -56,12 +56,12 @@ function App() {
           })
           .catch(err=>{
             setError('Could not find location, please enter another')
-            //console.log(err)
+            console.log(err)
           })
       })
       .catch(err=>{
         setError('Could not find location, please enter another')
-        //console.log(err)
+        console.log(err)
       })
   }
 
