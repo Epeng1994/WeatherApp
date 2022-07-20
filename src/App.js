@@ -29,7 +29,7 @@ function App() {
 
   const handleSubmit =e=>{
     e.preventDefault()
-    axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city.cityName}&limit=5&appid=${apiID}`)
+    axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city.cityName}&limit=5&appid=${apiID}`)
       .then(res=>{
         let result = res.data.find(a=>a.state.toLowerCase()===city.cityState) //single city object
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${Math.ceil(result.lat)}&lon=${Math.ceil(result.lon)}&exclude=hourly,minutely&appid=${apiID}`)
