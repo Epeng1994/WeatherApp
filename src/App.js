@@ -74,6 +74,7 @@ function App() {
           <img src='./assets/weather.gif' alt='weather gif' className = 'weatherHeader'/>
         </div>
       <h2>What's the weather with you?</h2>
+      <h3>Select a date to bring up more information</h3>
       <form onSubmit={handleSubmit}>
         <input name = 'cityName' placeholder = 'enter a city' onChange={handleChange}/>
         <input name = 'cityState' placeholder = 'enter a state' onChange={handleChange}/>

@@ -22,7 +22,7 @@ const WeatherDaily = props =>{
     return(
         <div className = 'weatherNode' onClick = {()=>props.setSelectedDate(props.info)}>
             <h2>{weatherInfo[0].slice(0,3)}</h2>
-            <h3>{weatherInfo[2]} {weatherInfo[1]}</h3>
+            <h2>{weatherInfo[2]} {weatherInfo[1]}</h2>
             <img src={adjustWeatherIcon(weather)} className = 'weather-icon' alt='weather-icon'/>
             <p>{description}</p>  
             <p>Rain: {rain}%</p> 
