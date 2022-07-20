@@ -30,34 +30,7 @@ function App() {
     axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city.cityName}&limit=5&appid=${process.env.REACT_APP_weatherAPI}`)
       .then(res=>{
         let result = res.data.find(a=>a.state.toLowerCase()===city.cityState) //single city object
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${Math.ceil(result.lat)}&lon=${Math.ceil(result.lon)}&exclude=hourly,minutely&appid=${process.env.REACT_APP_weatherAPI}`)
-          .then(res=>{
-            setError('')
-            let result = res.data.daily.map((a,i)=>{
-              const dateConversion = date =>{
-                return new Date(date)
-              }
-                return {
-                  rain:a.rain !== undefined ? Math.round(a.rain) : 0,
-                  tempMax:calculateTempToFarenheit(a.temp.max),
-                  tempMin:calculateTempToFarenheit(a.temp.min),
-                  weather: a.weather[0].main,
-                  description: a.weather[0].description,
-                  date: dateConversion(a.dt*1000),
-                  humidity: a.humidity,
-                  sunrise:dateConversion(a.sunrise*1000),
-                  sunset:dateConversion(a.sunset*1000),
-                  wind_speed:a.wind_speed,
-                  clouds: a.clouds,
-                  count:i
-                }
-            })
-            setForecast(result)
-          })
-          .catch(err=>{
-            setError('Could not find location, please enter another')
-            console.log(err)
-          })
+        console.log(result)
       })
       .catch(err=>{
         setError('Could not find location, please enter another')
