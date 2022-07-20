@@ -4,8 +4,6 @@ import './App.css';
 import WeatherDaily from './components/WeatherDaily'
 import CurrentWeather from './components/CurrentWeather'
 
-
-
 function App() {
   
   const [city, setCity] = useState({

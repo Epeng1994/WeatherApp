@@ -24,6 +24,7 @@
 }
 .weatherNode:hover{
   border: 2px solid rgb(0, 0, 0);
+  transform: scale(1.15)
 }
 .weatherNodeMain{
   border: 2px solid rgb(137, 211, 233);
@@ -82,7 +83,9 @@ html{
 
 
 @media screen and (max-width:1500px){
-
+  p{
+    font-size: 1.3vw;
+  }
   .weatherFlex{
     display:flex;
     justify-content: center;
@@ -144,7 +147,9 @@ html{
 }
 
 @media screen and (max-width:1000px){
-
+  p{
+    font-size: 1.3vw;
+  }
   .weatherFlex{
     display:flex;
     justify-content: center;
@@ -154,7 +159,7 @@ html{
     display:flex;
     justify-content: space-around;
     flex-flow: column;
-    height: 35vw;
+    height: 65vw;
     width:60vw;
   }
   .weatherNode{
@@ -163,7 +168,7 @@ html{
     background-color: rgb(163, 217, 233);
     border-radius: 50px;
     animation: weather .5s ease-in;
-    height:3vw;
+    height:6vw;
     display:flex;
     justify-content: space-evenly;
   }
