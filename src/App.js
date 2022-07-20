@@ -27,6 +27,8 @@ function App() {
 
   const handleSubmit =e=>{
     e.preventDefault()
+    setForecast([])
+    setSelectedDate('')
     axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city.cityName}&limit=5&appid=${apiID}`)
       .then(res=>{
         let result = res.data.find(a=>a.state.toLowerCase()===city.cityState) //single city object

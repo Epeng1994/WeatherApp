@@ -83,6 +83,12 @@ html{
 
 
 @media screen and (max-width:1500px){
+  .weatherHeader{
+    border-radius: 500px;
+    width: 30vw;
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+  }
   p{
     font-size: 1.3vw;
   }
@@ -147,6 +153,12 @@ html{
 }
 
 @media screen and (max-width:1000px){
+  .weatherHeader{
+    border-radius: 500px;
+    width: 30vw;
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+  }
   p{
     font-size: 1.3vw;
   }
@@ -207,5 +219,10 @@ html{
   }
   h2{
     font-size: large;
+  }
+  .weather-icon{
+    border-radius: 50px;
+    width:4vw;
+    height: 4vw;;
   }
 }
