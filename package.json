@@ -9,8 +9,10 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "react": "^18.1.0",
+    "react-accessible-accordion": "^5.0.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
+    "react-select-async-paginate": "^0.7.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,8 +1,9 @@
-import axios from 'axios'
-import React, {useState} from 'react'
+import axios from 'axios';
+import React, {useState} from 'react';
 import './App.css';
-import WeatherDaily from './components/WeatherDaily'
-import CurrentWeather from './components/CurrentWeather'
+import WeatherDaily from './components/WeatherDaily';
+import CurrentWeather from './components/CurrentWeather';
+import Search from './components/Search/search';
 
 function App() {
   
@@ -77,6 +78,7 @@ function App() {
         </div>
       <h2>What's the weather with you?</h2>
       <h3>Select a date to bring up more information</h3>
+      <Search/>
       <form onSubmit={handleSubmit}>
         <input name = 'cityName' placeholder = 'enter a city' onChange={handleChange}/>
         <input name = 'cityState' placeholder = 'enter a state' onChange={handleChange}/>
