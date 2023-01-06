@@ -1,97 +1,49 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 import './App.css';
-import WeatherDaily from './components/WeatherDaily';
+// import WeatherDaily from './components/WeatherDaily';
 import CurrentWeather from './components/CurrentWeather';
 import Search from './components/Search/search';
 
 function App() {
-  
-  const [city, setCity] = useState({
-    cityName:'',
-    cityState:''
-  })
+  const apiID = process.env.REACT_APP_weatherAPI || '99252094471af63f3bc4db3139381388'
+  const [currentWeather, ssetCurrentWeather] = useState(null)
+  const [forecast, setCurrentForecast] = useState(null)
   const [error,setError] = useState('')
 
-  const [forecast, setForecast] = useState([])
-  const [selectedDate, setSelectedDate] = useState('')
+  const handleOnSearchChange = async searchData =>{
+    const [latitude,longitude]  = searchData.value.split(' ')
 
-  const handleChange = e =>{
-    const {name, value} = e.target
-    setCity({...city, [name]: value.toLowerCase()})
-  }
-  const calculateTempToFarenheit = temp =>{
-    return Math.round((temp - 273.15)* 9/5 + 32)
-  }
-
-  const apiID = process.env.REACT_APP_weatherAPI || '99252094471af63f3bc4db3139381388'
-
-  const handleSubmit =e=>{
-    e.preventDefault()
-    setForecast([])
-    setSelectedDate('')
-    axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city.cityName}&limit=5&appid=${apiID}`)
+    await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${Math.ceil(latitude)}&lon=${Math.ceil(longitude)}&exclude=hourly,minutely&appid=${apiID}`)
       .then(res=>{
-        let result = res.data.find(a=>a.state.toLowerCase()===city.cityState) //single city object
-        axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${Math.ceil(result.lat)}&lon=${Math.ceil(result.lon)}&exclude=hourly,minutely&appid=${apiID}`)
-          .then(res=>{
-            setError('')
-            let result = res.data.daily.map((a,i)=>{
-              const dateConversion = date =>{
-                return new Date(date)
-              }
-                return {
-                  rain:a.rain !== undefined ? Math.round(a.rain) : 0,
-                  tempMax:calculateTempToFarenheit(a.temp.max),
-                  tempMin:calculateTempToFarenheit(a.temp.min),
-                  weather: a.weather[0].main,
-                  description: a.weather[0].description,
-                  date: dateConversion(a.dt*1000),
-                  humidity: a.humidity,
-                  sunrise:dateConversion(a.sunrise*1000),
-                  sunset:dateConversion(a.sunset*1000),
-                  wind_speed:a.wind_speed,
-                  clouds: a.clouds,
-                  count:i
-                }
-            })
-            setForecast(result)
-          })
-          .catch(err=>{
-            setError('Could not find location, please enter another')
-            console.log(err)
-          })
+        console.log(res.data)
+        ssetCurrentWeather(res.data)
       })
       .catch(err=>{
-        setError('Could not find location, please enter another')
         console.log(err)
       })
-  }
+  };
 
-
+  const calculateTempToFarenheit = temp =>{
+    return Math.round((temp - 273.15)* 9/5 + 32)
+  };
 
   return (
     <div className="App">
       <header className="App-header">
+        <h1>What's the weather with you?</h1>
         <div>
           <img src='./assets/weather.gif' alt='weather gif' className = 'weatherHeader'/>
         </div>
-      <h2>What's the weather with you?</h2>
-      <h3>Select a date to bring up more information</h3>
-      <Search/>
-      <form onSubmit={handleSubmit}>
-        <input name = 'cityName' placeholder = 'enter a city' onChange={handleChange}/>
-        <input name = 'cityState' placeholder = 'enter a state' onChange={handleChange}/>
-        <button>Submit</button>
-      </form>
+        <Search onSearchChange={handleOnSearchChange}/>
       </header>
       <div>{error? error:''}</div>
       <div className = 'container'>
-        {selectedDate ? <CurrentWeather info = {selectedDate}></CurrentWeather> : ''}
+        {currentWeather && <CurrentWeather data = {currentWeather} calculateTempToFarenheit={calculateTempToFarenheit}></CurrentWeather>}
       </div>
       <div className = 'weatherFlex'>
         <div className = 'weatherContainer'>
-          {
+          {/* {
             forecast.map(a=>{
               if(a.count===forecast.length-1){
                 return ''
@@ -101,7 +53,7 @@ function App() {
                 )
               }
             })
-          }
+          } */}
         </div>
       </div>
       

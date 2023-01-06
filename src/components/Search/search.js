@@ -4,9 +4,7 @@ import axios from 'axios';
 import APIOptions from './api'
 
 const Search = ({onSearchChange}) => {
-
     const [search,setSearch] = useState(null);
-    const apiID = process.env.REACT_APP_weatherAPI || '99252094471af63f3bc4db3139381388'
 
     const handleOnChange = searchData =>{
         setSearch(searchData);
@@ -39,6 +37,7 @@ const Search = ({onSearchChange}) => {
                 value={search}
                 onChange={handleOnChange}
                 loadOptions={loadOptions}
+                className = 'searchBar'
             />
         </>
     )
