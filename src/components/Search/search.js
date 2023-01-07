@@ -14,7 +14,6 @@ const Search = ({onSearchChange}) => {
     const loadOptions = async inputValue =>{
         return await axios.get(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=1000000&namePrefix=${inputValue}`,APIOptions)
             .then(res=>{
-                console.log(res.data.data)
                 return{
                     options: res.data.data.map(city=>{
                         return {
