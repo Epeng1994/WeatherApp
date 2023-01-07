@@ -1,0 +1,17 @@
+.icon-small{
+    width:7%;
+}
+
+.forecast-line{
+    width:50vw;
+    height:7vw;
+    display:flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #74BDE0;
+    border-radius: 2vw;
+}
+.forecast-line h3{
+    width:5vw;
+}

@@ -1,0 +1,33 @@
+.weatherNodeMain{
+    border: 2px solid rgb(137, 211, 233);
+    padding: 1.5vw;
+    background-color: #4A8DB7;
+    border-radius: 20px;
+    animation: weather .5s ease-in;
+    width: 47vw;
+    height:18vw;
+    margin-top: 2vw;
+    display:flex;
+    justify-content: space-around;
+}
+
+.icon-large{
+    width:100%;
+}
+
+.infoTab{
+    text-align: center;
+    width: 100%;
+    display:flex;
+    flex-flow: column;
+}
+.infoTab p{
+    width:15vw;
+    font-size:medium
+}
+
+h1{
+    font-size: 3.5rem;
+    margin:0;
+    border:0;
+  }
