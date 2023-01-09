@@ -9,9 +9,22 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #74BDE0;
+    background-color: #4A8DB7;
     border-radius: 2vw;
+    border: 1px solid rgb(137, 211, 233);
+    animation: weather .75s;
 }
 .forecast-line h3{
     width:5vw;
 }
+
+@keyframes weather{
+    0%{
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0);
+      opacity:1;
+    }
+  }
