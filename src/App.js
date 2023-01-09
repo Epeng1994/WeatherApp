@@ -9,7 +9,6 @@ function App() {
   const apiID = process.env.REACT_APP_weatherAPI || '99252094471af63f3bc4db3139381388'
   const [currentWeather, setCurrentWeather] = useState(null)
   const [forecast, setCurrentForecast] = useState([])
-  const [error,setError] = useState('')
 
   const handleOnSearchChange = async searchData =>{
     const [latitude,longitude]  = searchData.value.split(' ')
@@ -37,20 +36,23 @@ function App() {
     return Math.round((temp - 273.15)* 9/5 + 32)
   };
 
+  const resetWeather = e =>{
+    setCurrentWeather(null);
+    setCurrentForecast([]);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <div>
           <img src='./assets/weather.gif' alt='weather gif' className = 'weatherHeader'/>
         </div>
-        <h1>What's the weather with you?</h1>
         <div className = 'container-row'>
           <Search onSearchChange={handleOnSearchChange}/>
-          <button>Clear</button>
+          <button className = 'search-button' onClick={resetWeather}>Clear Search</button>
         </div>
         
       </header>
-      <div>{error? error:''}</div>
       <div className = 'container-row'>
         {currentWeather && <CurrentWeather data = {currentWeather} calculateTempToFarenheit={calculateTempToFarenheit}></CurrentWeather>}
       </div>
