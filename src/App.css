@@ -8,12 +8,11 @@
 .weatherFlex{
   display:flex;
   justify-content: center;
-  height:100vh;
 }
 .weather-icon{
   border-radius: 50px;
   width:10vw;
-  height: 10vw;;
+  height: 10vw;
 }
 p{
   font-size: 1rem;
@@ -36,18 +35,17 @@ p{
   flex-flow: column;
 }
 .weatherHeader{
-  border-radius: 200px;
-  width: 20vw;
-  margin-top: 5vw;
-  margin-bottom: 3vw;
+  border-radius: 4vw;
+  width: 18vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
 }
 html{
   background-color: #42b6e4;
   background: linear-gradient(#3B7197,#A1E1FA) no-repeat;
-  overflow-y: hidden;
 }
 .searchBar{
-  width:60vw;
+  width:40vw;
 }
 
 .search-button{
@@ -74,147 +72,39 @@ html{
 }
 
 
-/* @media screen and (max-width:1500px){
-  .weatherHeader{
-    border-radius: 500px;
-    width: 30vw;
-    margin-top: 5vw;
-    margin-bottom: 3vw;
-  }
-  p{
-    font-size: 1.3vw;
-  }
-  .weatherFlex{
-    display:flex;
-    justify-content: center;
-  }
+@media screen and (max-width:1500px){
   .weatherContainer{
     margin-top: 3vw;
     display:flex;
     justify-content: space-around;
-    flex-flow: column;
     height: 35vw;
-    width:60vw;
+    width:100vw;
   }
-  .weatherNode{
-    border: 2px solid rgb(137, 211, 233);
-    padding: .5vw;
-    background-color: rgb(163, 217, 233);
-    border-radius: 50px;
-    animation: weather .5s ease-in;
-    height:3vw;
-    display:flex;
-    justify-content: space-evenly;
-  }
-  .weatherNode p{
-    width:9vw;
-  }
-  .weather-icon{
-    border-radius: 50px;
-    width:3vw;
-    height: 3vw;;
-  }
-  .weatherNodeMain{
-    border: 2px solid rgb(137, 211, 233);
-    padding: 1vw;
-    background-color: rgb(163, 217, 233);
-    border-radius: 50px;
-    animation: weather .5s ease-in;
-    width: 60vw;
-    height:13vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1vw;
-  }
-  .weatherNodeMain .infoTab{
-    padding-left: 1vw;
+  p{
+    font-size: .75rem;
+    margin:0;
+    border:0;
     text-align: left;
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
   }
-  .weatherNodeMain .weather-icon{
-    border-radius: 50px;
-    width:10vw;
-    height: 10vw;;
+  .weatherHeader{
+    border-radius: 4vw;
+    width: 25vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+  } 
+  .search-button:hover{
+    background-color: #A1E1FA;
+    box-shadow: 2px 2px #3B7197;
   }
-  h2{
-    font-size: large;
+  
+  @keyframes weather{
+    0%{
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0);
+      opacity:1;
+    }
   }
 }
-
-@media screen and (max-width:1000px){
-  .weatherHeader{
-    border-radius: 500px;
-    width: 30vw;
-    margin-top: 5vw;
-    margin-bottom: 3vw;
-  }
-  p{
-    font-size: 1.3vw;
-  }
-  .weatherFlex{
-    display:flex;
-    justify-content: center;
-  }
-  .weatherContainer{
-    margin-top: 3vw;
-    display:flex;
-    justify-content: space-around;
-    flex-flow: column;
-    height: 65vw;
-    width:60vw;
-  }
-  .weatherNode{
-    border: 2px solid rgb(137, 211, 233);
-    padding: .5vw;
-    background-color: rgb(163, 217, 233);
-    border-radius: 50px;
-    animation: weather .5s ease-in;
-    height:6vw;
-    display:flex;
-    justify-content: space-evenly;
-  }
-  .weatherNode p{
-    width:9vw;
-  }
-  .weather-icon{
-    border-radius: 50px;
-    width:3vw;
-    height: 3vw;;
-  }
-  .weatherNodeMain{
-    border: 2px solid rgb(137, 211, 233);
-    padding: 1vw;
-    background-color: rgb(163, 217, 233);
-    border-radius: 50px;
-    animation: weather .5s ease-in;
-    width: 60vw;
-    height:13vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1vw;
-  }
-  .weatherNodeMain .infoTab{
-    padding-left: 1vw;
-    text-align: left;
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
-  }
-  .weatherNodeMain .weather-icon{
-    border-radius: 50px;
-    width:10vw;
-    height: 10vw;;
-  }
-  h2{
-    font-size: large;
-  }
-  .weather-icon{
-    border-radius: 50px;
-    width:4vw;
-    height: 4vw;;
-  }
-} */

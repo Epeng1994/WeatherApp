@@ -1,10 +1,9 @@
 .icon-small{
     width:7%;
 }
-
 .forecast-line{
-    width:50vw;
-    height:7vw;
+    width:37vw;
+    height:3vw;
     display:flex;
     flex-flow: row;
     justify-content: space-around;
@@ -13,18 +12,39 @@
     border-radius: 2vw;
     border: 1px solid rgb(137, 211, 233);
     animation: weather .75s;
+    color:#A1E1FA;
 }
 .forecast-line h3{
     width:5vw;
 }
 
-@keyframes weather{
-    0%{
-      transform: translateX(200px);
-      opacity: 0;
-    }
-    100%{
-      transform: translateX(0);
-      opacity:1;
-    }
+.forecast-line p{
+  width:4vw;
+}
+
+@media screen and(max-width:1500px) {
+  .icon-small{
+    width:7%;
   }
+  .forecast-line{
+      width:37vw;
+      height:3vw;
+      display:flex;
+      flex-flow: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #4A8DB7;
+      border-radius: 2vw;
+      border: 1px solid rgb(137, 211, 233);
+      animation: weather .75s;
+      color:#A1E1FA;
+  }
+  .forecast-line h3{
+      width:5vw;
+  }
+
+  .forecast-line p{
+    width:4vw;
+  }
+}
+

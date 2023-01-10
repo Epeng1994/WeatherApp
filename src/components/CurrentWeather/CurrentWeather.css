@@ -1,33 +1,76 @@
 .weatherNodeMain{
     border: 2px solid rgb(137, 211, 233);
-    padding: 1.5vw;
+    padding: 1vw;
     background-color: #4A8DB7;
     border-radius: 20px;
     animation: weather .5s ease-in;
-    width: 47vw;
-    height:18vw;
-    margin-top: 2vw;
+    width: 35vw;
+    height:10vw;
+    margin-top: 1vw;
     display:flex;
     justify-content: space-around;
+    color:#A1E1FA;
 }
-
+.weatherNodeMain .weather-info{
+    width:20%;
+}
 .icon-large{
     width:100%;
+    height:100%;
 }
-
-.infoTab{
-    text-align: center;
-    width: 100%;
-    display:flex;
-    flex-flow: column;
-}
-.infoTab p{
-    width:15vw;
-    font-size:medium
-}
-
 h1{
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin:0;
     border:0;
-  }
+    text-align: left;
+}
+h2{
+    font-size: 1.5rem;
+    margin:0;
+    border:0;
+    text-align: left;
+}
+.p{
+    font-size: 2rem;
+}
+.weather-info{
+    width:40vw;
+}
+
+@media screen and ((max-width:1500px)) {
+    .weatherNodeMain{
+        border: 2px solid rgb(137, 211, 233);
+        padding: 1vw;
+        background-color: #4A8DB7;
+        border-radius: 20px;
+        animation: weather .5s ease-in;
+        width: 35vw;
+        height:10vw;
+        margin-top: 1vw;
+        display:flex;
+        justify-content: space-around;
+        color:#A1E1FA;
+    }
+    .weatherNodeMain .weather-info{
+        width:20%;
+    }
+    .icon-large{
+        width:100%;
+        height:100%;
+    }
+    h1{
+        font-size: 2rem;
+        margin:0;
+        border:0;
+        text-align: left;
+    }
+    h2{
+        font-size: 1.5rem;
+        margin:0;
+        border:0;
+        text-align: left;
+    }
+    .p{
+        font-size: 1.5rem;
+    }
+}
