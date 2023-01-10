@@ -17,7 +17,7 @@ function App() {
     await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiID}&units=metric`)
     .then(res=>{
       let weatherResult = res.data.list;
-      setCurrentWeather(weatherResult[0]);
+      setCurrentWeather({city:res.data.city.name,info:weatherResult[0]});
       setCurrentForecast([weatherResult[8],weatherResult[16],weatherResult[24],weatherResult[32]]);
     })
     .catch(err=>{
